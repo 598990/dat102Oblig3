@@ -3,7 +3,6 @@ package no.hvl.dat102;
 public class MainTestInsertionSortDouble {
 
 	public static void main(String[] args) {
-		/*
 		// Calculates the time 10 times and finds the average time
 		double[] times = new double[10];
 		for (int i = 0; i < 10; i++) {
@@ -41,15 +40,7 @@ public class MainTestInsertionSortDouble {
 
 		// Prints out the average time
 		System.out.println(total / 10);
-		*/
 		
-		Integer[] a = {5, 21, 3, 6, 7, 12, 42, 2, 7, 5, 6, 13};
-		
-		InsertionSort.insertionSortDouble(a, a.length);
-		
-		for(Integer i : a) {
-			System.out.println(i);
-		}
 	}
 	
 
