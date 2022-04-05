@@ -40,7 +40,7 @@ public class InsertionSort {
 	 * @param n amount of elements to be sorted
 	 */
 	public static <T extends Comparable<? super T>> void insertionSortDouble(T[] a, int n) {
-		insertionSort(a, 0, n);
+		insertionSortDouble(a, 0, n);
 	}
 	
 	/**
@@ -50,9 +50,15 @@ public class InsertionSort {
 	 * @param end last index to sort to
 	 */
 	public static <T extends Comparable<? super T>> void insertionSortDouble(T[] a, int start, int end) {
-		for(int i = start + 1; i < end-1; i = i+2) {
+		for(int i = start + 1; i < end; i = i+2) {
 			T temp1 = a[i];
-			T temp2 = a[i+1];
+			T temp2;
+			if(i+1 < end) {
+				temp2 = a[i+1];
+			}
+			else {
+				temp2 = a[i-1];
+			}
 			int j = i-1;
 			while (j >= start) {
 				if(temp1.compareTo(a[j]) < 0 || temp2.compareTo(a[j]) < 0) {
@@ -73,10 +79,12 @@ public class InsertionSort {
 						a[j + 1] = a[j];
 						a[j] = temp1;
 						j--;
+						
 					}
 					else {
 						a[j + 1] = a[j];
 						a[j] = temp2;
+						a[j+2] = temp1;
 						j--;
 					}
 				}
