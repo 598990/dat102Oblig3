@@ -1,6 +1,6 @@
 package no.hvl.dat102;
 
-public class Main {
+public class MainAllElementsAreEqual {
 
 	public static void main(String[] args) {
 		
@@ -12,13 +12,13 @@ public class Main {
 			Integer[] a = new Integer[32000];
 			
 			for(int j = 0; j < a.length; j++) {
-				a[j] = (int) Math.floor(Math.random() * a.length);
+				a[j] = (int) Math.floor(5);
 			}
 			
 			// Current time before sorting
 			long start = System.nanoTime();
 			
-			a = Sorting.mergeSort(a);
+			Sorting.quickSort(a, a.length);
 			
 			// Current time after sorting
 			long end = System.nanoTime();

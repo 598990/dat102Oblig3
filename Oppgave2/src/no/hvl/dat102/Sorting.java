@@ -99,11 +99,12 @@ public class Sorting {
 	 */
 	public static <T extends Comparable<? super T>> void quickSort(T[]a, int min, int max) {
 		
+		//comments explain when all elements are equal
 		if(max - min + 1 >= MIN_SIZE) {
-			int p = partition(a, min, max);
-			quickSort(a, min, p-1);
-			quickSort(a, p+1, max);
-		}
+			int p = partition(a, min, max); //0 n-1, returns 0
+			quickSort(a, min, p-1); //0 -1, fails methods if statement
+			quickSort(a, p+1, max);// 1 n-1, one method fails, one will increase by 1 until fails if statement
+		} // for less elements, 
 		// else do nothing
 	}
 	
@@ -116,19 +117,20 @@ public class Sorting {
 	 */
 	private static <T extends Comparable<? super T>> int partition(T[] a, int first, int last) {
 		
-		T pivot = a[last];
+		// Comments explain the method when all elements are equal
+		T pivot = a[last]; // 5
 		
-		int i = first;
+		int i = first; // 0
 		
-		for(int j = first; j < last; j++) {
-			if(a[j].compareTo(pivot) < 0) {
-				swap(a, i, j);
+		for(int j = first; j < last; j++) { // j = 0 j < n-1
+			if(a[j].compareTo(pivot) < 0) { // a[j] < 5, never true
+				swap(a, i, j); 
 				i++;
 			}
 		}
-		swap(a, i, last);
+		swap(a, i, last); // swaps 0 with n-1
 		
-		return i;
+		return i; // return 0
 	}
 	
 	/**
