@@ -12,7 +12,7 @@ public class MainAllElementsAreEqual {
 			Integer[] a = new Integer[32000];
 			
 			for(int j = 0; j < a.length; j++) {
-				a[j] = (int) Math.floor(5);
+				a[j] = 5;
 			}
 			
 			// Current time before sorting
